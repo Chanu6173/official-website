@@ -1,0 +1,128 @@
+/* Color Palette */
+:root {
+  --gradient: radial-gradient(at 5% 80%, seashell, burlywood 70%);
+}
+
+/* Shape 1 */
+.shape-1 {
+  left: 310px;
+  animation: shape-1-movement;
+}
+
+/* Shape 2 */
+.shape-2 {
+  left: 205px;
+  animation: shape-2-movement;
+}
+
+/* Shape 3 */
+.shape-3 {
+  left: 100px;
+  animation: shape-3-movement;
+}
+
+/* Animations */
+/* Shape 1 Animation */
+@keyframes shape-1-movement {
+  from {
+  }
+  50% {
+    filter: blur(1.5px);
+  }
+  to {
+    left: 100px;
+  }
+}
+
+/* Shape 2 Animation */
+@keyframes shape-2-movement {
+  from {
+  }
+  5% {
+    background: var(--gradient);
+  }
+  10% {
+    height: 125px;
+  }
+  20% {
+    height: 150px;
+  }
+  50% {
+    filter: blur(1px);
+  }
+  to {
+    height: 100px;
+  }
+}
+
+/* Shape 3 Animation */
+@keyframes shape-3-movement {
+  from {
+    background: var(--gradient);
+  }
+  10% {
+    height: 150px;
+  }
+  20% {
+    height: 200px;
+    left: 100px;
+  }
+  50% {
+    height: 200px;
+    left: 205px;
+  }
+  90% {
+    height: 100px;
+  }
+  to {
+    height: 100px;
+    left: 310px;
+    background: var(--gradient);
+  }
+}
+
+/* Shared Properties */
+.shape-1,
+.shape-2,
+.shape-3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 150px;
+  border-radius: 50px;
+  background: burlywood;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Body and Container Settings */
+/* Center shapes */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Set background and border color */
+.container {
+  width: 500px;
+  height: 500px;
+  border: 5px solid lightgray;
+  background: royalblue;
+  position: relative;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Rotate Container */
+  rotate: 180.02deg;
+
+  /* rotate: 180deg; */
+  /* Causes a rendering bug in Firefox 131.0b9 (aarch64) */
+}
